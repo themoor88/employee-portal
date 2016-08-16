@@ -1,0 +1,19 @@
+.container.tab-container.pay-stubs-container
+  %ul.nav.nav-tabs.nav-stacked{ role: 'tablist' }
+    %li.active{ role: 'presentation' }
+      %a{ href: '#pay-stubs', 'aria-controls': 'pay-stubs', role: 'tab', data: { toggle: 'tab' } } Pay Stubs
+    %li{ role: 'presentation' }
+      %a{ href: '#t4', 'aria-controls': 't4', role: 'tab', data: { toggle: 'tab' } } T4
+    %li{ role: 'presentation' }
+      %a{ href: '#roe', 'aria-controls': 'roe', role: 'tab', data: { toggle: 'tab' } } ROE
+
+  .tab-content.pay-stubs-tab-content
+    .tab-pane.active#pay-stubs{ role: "tabpanel" }
+      %p Pay Stub 8, June 16, 2016
+      %p Pay Stub 7, June 2, 2016
+      %p Pay Stub 6, May 19, 2016
+      %p Pay Stub 5, May 5, 2016
+      %p Pay Stub 4, April 21, 2016
+      %p Pay Stub 3, April 7, 2016
+    .tab-pane#t4{ role: "tabpanel" }
+    .tab-pane#roe{ role: "tabpanel" }

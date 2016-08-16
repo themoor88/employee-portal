@@ -1,0 +1,24 @@
+.container.tab-container.learning-modules-container
+  %ul.nav.nav-tabs.nav-stacked{ role: 'tablist' }
+    %li.active{ role: 'presentation' }
+      %a{ href: '#guidelines', 'aria-controls': 'guidelines', role: 'tab', data: { toggle: 'tab' } } Guidelines
+    %li{ role: 'presentation' }
+      %a{ href: '#policies', 'aria-controls': 'policies', role: 'tab', data: { toggle: 'tab' } } Policies
+    %li{ role: 'presentation' }
+      %a{ href: '#pictures', 'aria-controls': 'pictures', role: 'tab', data: { toggle: 'tab' } } Pictures
+    %li{ role: 'presentation' }
+      %a{ href: '#videos', 'aria-controls': 'videos', role: 'tab', data: { toggle: 'tab' } } Videos
+    %li{ role: 'presentation' }
+      %a{ href: '#did-you-know', 'aria-controls': 'did-you-know', role: 'tab', data: { toggle: 'tab' } } Did you know?
+
+  .tab-content.learning-modules-tab-content
+    .tab-pane.active#guidelines{ role: "tabpanel" }
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero eligendi numquam voluptas magni. Maxime consectetur, temporibus harum omnis molestias reiciendis, vero neque odio aut molestiae tenetur sunt praesentium esse nobis.
+    .tab-pane#policies{ role: "tabpanel" }
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero eligendi numquam voluptas magni. Maxime consectetur, temporibus harum omnis molestias reiciendis, vero neque odio aut molestiae tenetur sunt praesentium esse nobis.
+    .tab-pane#pictures{ role: "tabpanel" }
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero eligendi numquam voluptas magni. Maxime consectetur, temporibus harum omnis molestias reiciendis, vero neque odio aut molestiae tenetur sunt praesentium esse nobis.
+    .tab-pane#videos{ role: "tabpanel" }
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero eligendi numquam voluptas magni. Maxime consectetur, temporibus harum omnis molestias reiciendis, vero neque odio aut molestiae tenetur sunt praesentium esse nobis.
+    .tab-pane#did-you-know{ role: "tabpanel" }
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero eligendi numquam voluptas magni. Maxime consectetur, temporibus harum omnis molestias reiciendis, vero neque odio aut molestiae tenetur sunt praesentium esse nobis.

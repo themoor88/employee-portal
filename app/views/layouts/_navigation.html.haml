@@ -8,6 +8,11 @@
         %span.icon-bar
         %span.icon-bar
       = link_to 'Home', root_path, class: 'navbar-brand'
+      - if current_user
+        = link_to 'My Training', training_stations_path, class: 'navbar-brand'
+        = link_to 'Payroll', pay_stubs_path, class: 'navbar-brand'
+        = link_to 'Learning Centre', learning_modules_path, class: 'navbar-brand'
+        = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'navbar-brand'
     .collapse.navbar-collapse
       %ul.nav.navbar-nav
         = render 'layouts/navigation_links'
