@@ -17,6 +17,8 @@ gem 'figaro'
 gem 'haml-rails'
 gem 'high_voltage'
 gem 'mysql2', '~> 0.3.18'
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
 gem 'sendgrid'
 gem 'simple_form'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
