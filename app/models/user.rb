@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # == Schema Information
 #
 # Table name: users
@@ -29,6 +30,7 @@ class User < ApplicationRecord
 
   #------------------------------------------------------------------------------
   # Associations
+  has_many :pay_stubs
 
   #------------------------------------------------------------------------------
   # Scopes
