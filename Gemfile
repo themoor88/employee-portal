@@ -17,6 +17,7 @@ gem 'figaro'
 gem 'haml-rails'
 gem 'high_voltage'
 gem 'mysql2', '~> 0.3.18'
+gem 'paperclip'
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
 gem 'sendgrid'
@@ -33,6 +34,9 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console'
+  gem 'rubocop', '~> 0.40.0', require: false
+  gem 'haml_lint', require: false
+  gem 'scss_lint', require: false
 end
 
 group :development, :test do

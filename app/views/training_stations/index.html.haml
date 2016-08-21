@@ -1,48 +1,13 @@
 .container.tab-container.training-stations-container
   %ul.nav.nav-tabs.nav-justified{ role: 'tablist' }
-    %li.active{ role: 'presentation' }
-      %a{ href: '#breakfast', 'aria-controls': 'breakfast', role: 'tab', data: { toggle: 'tab' } } Breakfast
-    %li{ role: 'presentation' }
-      %a{ href: '#cold-boxes', 'aria-controls': 'cold-boxes', role: 'tab', data: { toggle: 'tab' } } Cold Boxes
-    %li{ role: 'presentation' }
-      %a{ href: '#hot-boxes', 'aria-controls': 'hot-boxes', role: 'tab', data: { toggle: 'tab' } } Hot Boxes
-    %li{ role: 'presentation' }
-      %a{ href: '#hand-out', 'aria-controls': 'hand-out', role: 'tab', data: { toggle: 'tab' } } Hand Out
-    %li{ role: 'presentation' }
-      %a{ href: '#cashier', 'aria-controls': 'cashier', role: 'tab', data: { toggle: 'tab' } } Cashier
-    %li{ role: 'presentation' }
-      %a{ href: '#prep-assist', 'aria-controls': 'prep-assist', role: 'tab', data: { toggle: 'tab' } } Prep Assist
-    %li{ role: 'presentation' }
-      %a{ href: '#prep-lead', 'aria-controls': 'prep-lead', role: 'tab', data: { toggle: 'tab' } } Prep Lead
+    - @training_stations.each_with_index do |training_station, index|
+      %li{ class: index == 0 ? 'active' : '', role: 'presentation' }
+        %a{ href: "##{training_station.name}", 'aria-controls': "#{training_station.name}", role: 'tab', data: { toggle: 'tab' } }= training_station.name
 
   .tab-content
-    .tab-pane.active#breakfast{ role: "tabpanel" }
-      %p= link_to 'Handbook & Guidelines (Download all pdf files)', '#'
-      %p= link_to 'Pictures & Videos', '#'
-      %p= link_to 'Tests', '#'
-      %p= link_to 'Results', '#'
-    .tab-pane#cold-boxes{ role: "tabpanel" }
-      %p= link_to 'Handbook & Guidelines (Download all pdf files)', '#'
-      %p= link_to 'Pictures & Videos', '#'
-      %p= link_to 'Tests', '#'
-      %p= link_to 'Results', '#'
-    .tab-pane#hot-boxes{ role: "tabpanel" }
-      %p= link_to 'Handbook & Guidelines (Download all pdf files)', '#'
-      %p= link_to 'Pictures & Videos', '#'
-      %p= link_to 'Tests', '#'
-      %p= link_to 'Results', '#'
-    .tab-pane#cashier{ role: "tabpanel" }
-      %p= link_to 'Handbook & Guidelines (Download all pdf files)', '#'
-      %p= link_to 'Pictures & Videos', '#'
-      %p= link_to 'Tests', '#'
-      %p= link_to 'Results', '#'
-    .tab-pane#prep-assist{ role: "tabpanel" }
-      %p= link_to 'Handbook & Guidelines (Download all pdf files)', '#'
-      %p= link_to 'Pictures & Videos', '#'
-      %p= link_to 'Tests', '#'
-      %p= link_to 'Results', '#'
-    .tab-pane#prep-lead{ role: "tabpanel" }
-      %p= link_to 'Handbook & Guidelines (Download all pdf files)', '#'
-      %p= link_to 'Pictures & Videos', '#'
-      %p= link_to 'Tests', '#'
-      %p= link_to 'Results', '#'
+    - @training_stations.each_with_index do |training_station, index|
+      .tab-pane{ id: "#{training_station.name}", role: "tabpanel", class: index == 0 ? 'active' : '' }
+        %p= link_to 'Handbook & Guidelines (Download all pdf files)', '#'
+        %p= link_to 'Pictures & Videos', '#'
+        %p= link_to 'Tests', '#'
+        %p= link_to 'Results', '#'

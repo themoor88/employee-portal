@@ -11,7 +11,6 @@ module DevisePermittedParameters
     # devise_parameter_sanitizer.permit(:sign_up) << :name
     # devise_parameter_sanitizer.permit(:account_update) << :name
   end
-
 end
 
 DeviseController.send :include, DevisePermittedParameters
