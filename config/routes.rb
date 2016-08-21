@@ -11,5 +11,9 @@ Rails.application.routes.draw do
     resources :pay_stubs, path: '/pay-stubs', only: [:index, :show]
     resources :training_stations, path: '/training-stations', only: [:index, :show]
     resources :learning_modules, path: '/learning-modules', only: [:index]
+    scope :pages do
+      get 'our-philosophy' => 'pages#our_philosophy'
+      get 'certification' => 'pages#certification'
+    end
   end
 end

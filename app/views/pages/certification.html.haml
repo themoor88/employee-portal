@@ -1,0 +1,13 @@
+.container
+  %table.table.table-bordered.certification-table
+    %thead
+      %tr
+        %th Stations
+        %th Certified
+        %th Badges
+    %tbody
+      - @training_stations.each do |training_station|
+        %tr
+          %td= training_station.name
+          %td= check_box_tag 'certified'
+          %td= image_tag 'http://placehold.it/50x50'
