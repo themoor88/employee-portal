@@ -1,3 +1,3 @@
 $ ->
-  # Hide flash messages
-  $('.alert').delay(1000).slideUp(750);
+  # Remove success and notice flash messages
+  $('.alert').not('.alert-danger').delay(2500).slideUp(750);
