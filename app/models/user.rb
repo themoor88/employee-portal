@@ -31,6 +31,7 @@ class User < ApplicationRecord
   #------------------------------------------------------------------------------
   # Associations
   has_many :pay_stubs
+  has_many :training_stations
 
   #------------------------------------------------------------------------------
   # Scopes
