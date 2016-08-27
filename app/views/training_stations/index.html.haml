@@ -2,11 +2,11 @@
   %ul.nav.nav-tabs.nav-justified{ role: 'tablist' }
     - @training_stations.each_with_index do |training_station, index|
       %li{ class: index == 0 ? 'active' : '', role: 'presentation' }
-        %a{ href: "##{training_station.name}", 'aria-controls': "#{training_station.name}", role: 'tab', data: { toggle: 'tab' } }= training_station.name
+        %a{ href: '#' + training_station.name.to_s, 'aria-controls': training_station.name.to_s, role: 'tab', data: { toggle: 'tab' } }= training_station.name
 
   .tab-content
     - @training_stations.each_with_index do |training_station, index|
-      .tab-pane{ id: "#{training_station.name}", role: "tabpanel", class: index == 0 ? 'active' : '' }
+      .tab-pane{ id: training_station.name.to_s, role: 'tabpanel', class: index == 0 ? 'active' : '' }
         %p= link_to 'Handbook & Guidelines (Download all pdf files)', '#'
         %p= link_to 'Pictures & Videos', '#'
         %p= link_to 'Tests', '#'
