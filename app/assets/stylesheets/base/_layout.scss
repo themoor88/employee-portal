@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: $base-background-color;
+}
+
+.wrapper {
+  display: flex;
+  min-height: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex: 1 1 auto;
+  width: 100%;
+
+  .content {
+    flex: 1 1 auto;
+    margin-top: 25px;
+
+    section {
+      background-color: $base-background-color;
+    }
+  }
+}
