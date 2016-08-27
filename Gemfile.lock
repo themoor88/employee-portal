@@ -289,6 +289,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   figaro
+  font-awesome-rails
   haml-rails
   haml_lint
   high_voltage
