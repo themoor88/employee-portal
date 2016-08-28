@@ -3,12 +3,16 @@
 #
 # Table name: pay_stubs
 #
-#  id         :integer          not null, primary key
-#  user_id    :integer
-#  first_day  :datetime
-#  last_day   :datetime
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id                :integer          not null, primary key
+#  user_id           :integer
+#  first_day         :datetime
+#  last_day          :datetime
+#  file_updated_at   :datetime
+#  file_file_size    :integer
+#  file_content_type :string(255)
+#  file_file_name    :string(255)
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
 #
 
 class PayStub < ApplicationRecord
