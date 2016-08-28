@@ -27,7 +27,6 @@ class TrainingStation < ApplicationRecord
   #------------------------------------------------------------------------------
   # Validations
   validates_attachment :handbook_and_guidelines, content_type: { content_type: %w(application/pdf) }
-  validates :handbook_and_guidelines, attachment_presence: true
 
   #------------------------------------------------------------------------------
   # Callbacks
