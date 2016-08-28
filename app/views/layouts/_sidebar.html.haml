@@ -1,0 +1,20 @@
+%ul.sidebar-nav.text-uppercase
+  %li.sidebar-brand
+    = link_to root_path do
+      = image_tag 'crave_logo', class: 'img-responsive sidebar-logo'
+  %li.sidebar-item
+    = link_to 'Inbox', '#', class: 'navbar-brand'
+  %li.sidebar-item
+    = link_to 'My Training', training_stations_path, class: 'navbar-brand'
+  %li.sidebar-item
+    = link_to 'Certification', certification_path, class: 'navbar-brand'
+  %li.sidebar-item
+    = link_to 'Schedule', '#', class: 'navbar-brand'
+  %li.sidebar-item
+    = link_to 'Our Philosophy', our_philosophy_path, class: 'navbar-brand'
+  %li.sidebar-item
+    = link_to 'Payroll', payroll_path, class: 'navbar-brand'
+  %li.sidebar-item
+    = link_to 'Learning Centre', learning_modules_path, class: 'navbar-brand'
+  %li.sidebar-item
+    = link_to 'Legends', '#', class: 'navbar-brand'
