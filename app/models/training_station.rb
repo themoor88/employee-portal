@@ -4,7 +4,9 @@
 # Table name: training_stations
 #
 #  id         :integer          not null, primary key
+#  user_id    :integer
 #  name       :string(255)
+#  certified  :boolean          default(FALSE)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
@@ -12,6 +14,7 @@
 class TrainingStation < ApplicationRecord
   #------------------------------------------------------------------------------
   # Associations
+  belongs_to :user
 
   #------------------------------------------------------------------------------
   # Scopes

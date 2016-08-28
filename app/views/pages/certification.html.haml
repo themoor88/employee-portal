@@ -9,5 +9,8 @@
       - @training_stations.each do |training_station|
         %tr
           %td= training_station.name
-          %td= check_box_tag 'certified'
+          - if training_station.certified
+            %td= fa_icon 'check'
+          - else
+            %td= fa_icon 'times'
           %td= image_tag 'http://placehold.it/50x50'
