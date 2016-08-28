@@ -2,7 +2,7 @@
   .row
     .col-md-offset-4.col-md-4
       .panel.panel-default
-        .panel-heading
+        .panel-heading.text-center
           %h2 Already a Member?
         .panel-body
           = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
@@ -12,5 +12,3 @@
             = f.input :remember_me, as: :boolean, input_html: { checked: 'checked' } if devise_mapping.rememberable?
             .text-center
               = button_tag 'Log In', type: :submit, class: 'btn btn-primary'
-          .text-center
-            = render 'devise/shared/links'
