@@ -1,21 +1,15 @@
 # frozen_string_literal: true
 # == Schema Information
 #
-# Table name: pay_stubs
+# Table name: t4_slips
 #
-#  id                :integer          not null, primary key
-#  user_id           :integer
-#  first_day         :datetime
-#  last_day          :datetime
-#  file_updated_at   :datetime
-#  file_file_size    :integer
-#  file_content_type :string(255)
-#  file_file_name    :string(255)
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 
-class PayStub < ApplicationRecord
+class T4Slip < ApplicationRecord
   #------------------------------------------------------------------------------
   # Associations
   belongs_to :user
@@ -43,45 +37,6 @@ class PayStub < ApplicationRecord
 
   #------------------------------------------------------------------------------
   # Rails Admin Config
-  rails_admin do
-    list do
-      field :id
-      field :user do
-        label 'Name'
-      end
-      field :first_day
-      field :last_day
-      field :created_at
-    end
-
-    show do
-      field :id
-      field :user do
-        label 'Name'
-      end
-      field :first_day
-      field :last_day
-      field :created_at
-    end
-
-    edit do
-      field :user do
-        label 'Name'
-      end
-      field :first_day
-      field :last_day
-    end
-
-    export do
-      field :id
-      field :user do
-        label 'Name'
-      end
-      field :first_day
-      field :last_day
-      field :created_at
-    end
-  end
 
   #------------------------------------------------------------------------------
   # private

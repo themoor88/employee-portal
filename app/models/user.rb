@@ -30,8 +30,10 @@ class User < ApplicationRecord
 
   #------------------------------------------------------------------------------
   # Associations
-  has_many :pay_stubs
   has_many :training_stations
+  has_many :pay_stubs
+  has_many :t4_slips
+  has_many :record_of_employments
 
   #------------------------------------------------------------------------------
   # Scopes

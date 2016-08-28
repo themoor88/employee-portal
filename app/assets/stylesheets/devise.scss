@@ -1,0 +1,6 @@
+body.devise-sessions,
+body.devise-passwords,
+body.devise-confirmations,
+body.devise-registrations {
+  @include custom-utility-classes;
+}

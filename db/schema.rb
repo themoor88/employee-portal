@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160827193147) do
+ActiveRecord::Schema.define(version: 20160828171804) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
@@ -33,22 +33,49 @@ ActiveRecord::Schema.define(version: 20160827193147) do
     t.integer  "user_id"
     t.datetime "first_day"
     t.datetime "last_day"
+    t.datetime "file_updated_at"
+    t.integer  "file_file_size"
+    t.string   "file_content_type"
+    t.string   "file_file_name"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["user_id"], name: "index_pay_stubs_on_user_id", using: :btree
+  end
+
+  create_table "record_of_employments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.datetime "file_updated_at"
+    t.integer  "file_file_size"
+    t.string   "file_content_type"
+    t.string   "file_file_name"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["user_id"], name: "index_record_of_employments_on_user_id", using: :btree
+  end
+
+  create_table "t4_slips", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_pay_stubs_on_user_id", using: :btree
+    t.index ["user_id"], name: "index_t4_slips_on_user_id", using: :btree
   end
 
   create_table "training_stations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.string   "name"
-    t.boolean  "certified",  default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.boolean  "certified",                            default: false
+    t.datetime "handbook_and_guidelines_updated_at"
+    t.integer  "handbook_and_guidelines_file_size"
+    t.string   "handbook_and_guidelines_content_type"
+    t.string   "handbook_and_guidelines_file_name"
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
     t.index ["user_id"], name: "index_training_stations_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
+    t.string   "name"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -60,7 +87,6 @@ ActiveRecord::Schema.define(version: 20160827193147) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "name"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"

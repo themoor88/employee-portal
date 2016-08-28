@@ -1,0 +1,88 @@
+nav.navbar {
+  width: 100%;
+  border-radius: 0;
+  margin: 0;
+  border: 0;
+  background-color: $light-grey;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  flex-shrink: 0;
+  font-size: 14px;
+
+  .nav-block {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 10px;
+    flex: 2;
+
+    .hamburger-icon {
+      cursor: pointer;
+      width: 35px;
+      height: 27px;
+      position: absolute;
+      transform: rotate(0deg);
+      transition: .5s ease-in-out;
+      display: block;
+      margin-left: 10px;
+      margin-top: 0;
+      left: 0;
+
+      span {
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: $black;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+
+        &:nth-child(1) {
+          top: 3px;
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+          top: 12px;
+        }
+
+        &:nth-child(4) {
+          top: 21px;
+        }
+      }
+
+
+      &.sidebar-is-open span:nth-child(1) {
+        top: 18px;
+        left: 50%;
+        width: 0%;
+      }
+
+      &.sidebar-is-open span:nth-child(2) {
+        transform: rotate(45deg);
+      }
+
+      &.sidebar-is-open span:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+
+      &.sidebar-is-open span:nth-child(4) {
+        top: 18px;
+        left: 50%;
+        width: 0%;
+      }
+    }
+
+    .navbar-link {
+      margin: 0 10px;
+    }
+
+    .crave-logo {
+      position: absolute;
+      left: 5px;
+      top: 5px;
+    }
+  }
+}

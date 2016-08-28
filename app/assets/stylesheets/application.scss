@@ -9,11 +9,12 @@
 // Internal assets including variables, colours and bootstrap overrides
 // Global styles
 @import 'base/base';
-// @import 'navigation';
-// @import 'footer';
+@import 'navigation';
+@import 'sidebar';
 
 // Page specific
+@import 'devise';
 @import 'pages';
 @import 'visitors';
+@import 'payroll';
 @import 'learning_modules';
-@import 'pay_stubs';
