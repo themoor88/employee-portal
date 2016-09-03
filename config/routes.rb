@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # needs to be AFTER "devise_for :admins" otherwise the admin routes will be messed up
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
+  resources :signup_onboarding
+
   authenticate :user do
     resources :training_stations, path: '/training-stations', only: [:index, :show]
     resources :learning_modules, path: '/learning-modules', only: [:index]

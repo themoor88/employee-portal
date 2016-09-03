@@ -6,5 +6,5 @@
         %p "Excellence is an art won by training and habituation. We do not act rightly because we have virtue or excellence, but we rather have those because we have acted rightly. We are what we repeatedly do. Excellence, then, is not an act but a habit." Aristotle
         - unless current_user
           .btn-container
-            = link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary'
+            = link_to 'Sign Up', signup_onboarding_path(:confirm_name), class: 'btn btn-primary'
             = link_to 'Log In', new_user_session_path, class: 'btn btn-success'

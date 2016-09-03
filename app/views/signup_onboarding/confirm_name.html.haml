@@ -1,0 +1,7 @@
+.container
+  .row
+    .col-md-offset-4.col-md-4.text-center
+      %p Welcome to Crave, We are excited to have you on-board. Please take the next few minutes to complete your on-boarding process. Let's start by your name:
+      = text_field_tag :name, nil, placeholder: 'Name', class: 'form-control text-center'
+      .btn-container
+        = link_to 'Next', next_wizard_path, class: 'btn btn-primary'
