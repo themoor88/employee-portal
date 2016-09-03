@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root to: 'visitors#index'
   devise_for :users
   devise_for :admins, skip: [:registrations]
 
@@ -15,4 +14,10 @@ Rails.application.routes.draw do
       get 'certification' => 'pages#certification'
     end
   end
+
+  authenticated :user do
+    root to: 'pages#dashboard', as: :authenticated_root
+  end
+
+  root 'visitors#index'
 end
