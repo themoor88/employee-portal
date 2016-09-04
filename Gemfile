@@ -25,6 +25,7 @@ gem 'rails_admin', '>= 1.0.0.rc'
 gem 'sendgrid'
 gem 'simple_form'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'wicked'
 
 group :development do
   gem 'annotate'
