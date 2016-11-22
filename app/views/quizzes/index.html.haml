@@ -1,0 +1,4 @@
+.container
+  %ul.nav.nav-tabs.nav-justified{ role: 'tablist' }
+    - @quizzes.each do |quiz|
+      %li= link_to quiz.name, training_station_quiz_path(quiz.training_station, quiz)
