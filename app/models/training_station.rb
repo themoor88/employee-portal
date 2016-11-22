@@ -19,6 +19,7 @@ class TrainingStation < ApplicationRecord
   #------------------------------------------------------------------------------
   # Associations
   belongs_to :user
+  has_many :quizzes
   has_attached_file :handbook_and_guidelines
 
   #------------------------------------------------------------------------------
@@ -49,7 +50,7 @@ class TrainingStation < ApplicationRecord
     list do
       field :id
       field :user do
-        label 'Name'
+        label 'User'
       end
       field :name
       field :certified
@@ -59,7 +60,7 @@ class TrainingStation < ApplicationRecord
     show do
       field :id
       field :user do
-        label 'Name'
+        label 'User'
       end
       field :name
       field :certified
@@ -69,7 +70,7 @@ class TrainingStation < ApplicationRecord
     edit do
       field :id
       field :user do
-        label 'Name'
+        label 'User'
       end
       field :name
       field :certified
@@ -79,7 +80,7 @@ class TrainingStation < ApplicationRecord
     export do
       field :id
       field :user do
-        label 'Name'
+        label 'User'
       end
       field :name
       field :certified
