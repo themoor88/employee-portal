@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class QuizzesController < ApplicationController
   def index
     @quizzes = TrainingStation.find(params[:training_station_id]).quizzes
