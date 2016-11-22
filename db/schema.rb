@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160828171804) do
+ActiveRecord::Schema.define(version: 20161122124615) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 20160828171804) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "choices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "question_id"
+    t.text     "content",     limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.boolean  "answer"
+    t.index ["question_id"], name: "index_choices_on_question_id", using: :btree
+  end
+
   create_table "pay_stubs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.datetime "first_day"
@@ -40,6 +49,22 @@ ActiveRecord::Schema.define(version: 20160828171804) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.index ["user_id"], name: "index_pay_stubs_on_user_id", using: :btree
+  end
+
+  create_table "questions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "content",    limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "quiz_id"
+    t.index ["quiz_id"], name: "index_questions_on_quiz_id", using: :btree
+  end
+
+  create_table "quizzes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "training_station_id"
+    t.index ["training_station_id"], name: "index_quizzes_on_training_station_id", using: :btree
   end
 
   create_table "record_of_employments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
