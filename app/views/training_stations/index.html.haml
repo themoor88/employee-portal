@@ -7,7 +7,7 @@
   .tab-content
     - @training_stations.each_with_index do |training_station, index|
       .tab-pane{ id: training_station.name.to_s, role: 'tabpanel', class: index == 0 ? 'active' : '' }
-        %p= link_to 'Handbook & Guidelines (Download all pdf files)', '#'
+        %p= link_to 'Handbook & Guidelines (Download all pdf files)', training_station.handbook_and_guidelines.url
         %p= link_to 'Pictures & Videos', '#'
-        %p= link_to 'Tests', '#'
+        %p= link_to 'Tests', training_station_quizzes_path(training_station)
         %p= link_to 'Results', '#'

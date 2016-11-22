@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   resources :signup_onboarding
 
   authenticate :user do
-    resources :training_stations, path: '/training-stations', only: [:index, :show]
+    resources :training_stations, path: '/training-stations', only: [:index, :show] do
+      resources :quizzes, path: '/tests', only: [:index, :show]
+    end
+
     resources :learning_modules, path: '/learning-modules', only: [:index]
     get '/payroll' => 'payroll#index'
     scope :pages do

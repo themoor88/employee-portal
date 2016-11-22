@@ -1,0 +1,22 @@
+.container
+  .col-md-1.column
+  .col-md-10.column
+    %p.lead Completed 10%
+    .progress
+      .progress-bar{role: 'progressbar', style: 'width: 10%;'}
+        %span.sr-only Completed 10%
+    - @quiz.questions.each do |question|
+      .panel.panel-primary
+        .panel-heading
+          %h3.panel-title
+            = question.content
+        .panel-body
+          - question.choices.each_with_index do |choice, index|
+            .radio
+              %label
+                %input#optionsRadios1{checked: 'checked' ? index == 0 : '', name: 'optionsRadios', type: 'radio', value: 'option1'}
+                = choice.content
+        .panel-footer
+          %a.btn.btn-primary{:href => "#", :role => "button"} Confirm
+          %a.btn.btn-default.disabled{:href => "#", :role => "button"} Next
+      .col-md-1.column
